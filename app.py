@@ -12,17 +12,19 @@ filmes = [
 def index():
     return render_template('index.html', lista=filmes)
 
-@app.route('/create')
-def create():
-    return render_template('create.html')
+@app.route('/adicionar')
+def adicionar():
+    return render_template('adicionar.html')
 
-@app.route('/save', methods=['POST'])
+@app.route('/salvar', methods=['POST'])
 def save():
     filme = request.form['filme']
-    filme = request.form['nota_publico']
-    filme = request.form['nota_critica']
-    novos_filmes = { 'Nome filme:':f'{filme}', 'Nota Público'} 
-    #asdaskdasdas
-    return redirect('https://5000-brown-lemur-kiu2j61j.ws-us18.gitpod.io/')
+    nota_pub = request.form['nota_publico']
+    nota_crit = request.form['nota_critica']
+    novos_filmes = {'Nome filme:':f'{filme}', 'Nota Público': f'{nota_pub}', 'Nota Critica': f'{nota_crit}'}
+
+    filmes.append(novos_filmes)
+    
+    return redirect('https://5000-lavender-jay-yx2ss8o4.ws-us18.gitpod.io/')
 
 app.run(debug=True)
