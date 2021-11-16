@@ -21,8 +21,8 @@ def save():
     filme = request.form['filme']
     filme = request.form['nota_publico']
     filme = request.form['nota_critica']
-    novos_filmes = { 'Nome filme:':f'{filme}', 'Nota Público'}
-
+    novos_filmes = { 'Nome filme:':f'{filme}', 'Nota Público'} 
+    #asdaskdasdas
     return redirect('https://5000-brown-lemur-kiu2j61j.ws-us18.gitpod.io/')
 
 app.run(debug=True)
