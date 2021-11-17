@@ -8,18 +8,20 @@
     <div class='container'>
 
     <h2>Buscar Filme</h2>
-    <form action="/salvar" method="POST">
+    <form action="/buscar" methods='POST'>
+        
         <table class="table table-dark table-striped">
             <th>Filme</th>
             <th>Avaliação Público (%) </th>
             <th>Avaliação Crítica (%) </th>
             {% for filme in lista: %}
             <tr>
-                <td>{{ filme['filme'] }}</td>
+                <td>{{ filme['nome_filme'] }}</td>
                 <td>{{ filme['nota_publico'] }} </td>
                 <td>{{ filme['nota_critica'] }} </td>
             </tr>
-            {% endfor %
+            {% endfor %}
+
         </table>
     </form>
     </div>

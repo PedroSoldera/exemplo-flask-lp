@@ -30,12 +30,19 @@ def salvar():
 @app.route('/buscar', methods=['POST'])
 def buscar():
     lista_filme = []
-    busca = request.form['busca']
+    buscar = request.form['buscar']
     for filme in filmes: 
-        if busca.lower() in filme['filme'].lower():
+        if busca.lower() in filme['nome_filme'].lower():
             lista_filme.append(filme)
     return render_template('buscar.html', lista_filme=lista_filme)
 
+@app.route('/deletar', methods=['POST'])
+def deletar():
+    deletar = request.form['deletar']
+    for filme in filmes:
+        if filme['nome_filme'] == filmes['nome_filme']:
+            del filmes[filme]
+    return redirect('https://5000-amaranth-moose-j937nk9u.ws-us18.gitpod.io/')
 
-
+    
 app.run(debug=True)
