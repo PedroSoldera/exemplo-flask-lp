@@ -25,14 +25,14 @@ def salvar():
 
     filmes.append(novos_filmes)
     
-    return redirect('https://5000-amaranth-moose-j937nk9u.ws-us18.gitpod.io/')
+    return redirect('https://5000-gray-tahr-puynue2p.ws-us18.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
     lista_filme = []
-    buscar = request.form['buscar']
+    pesquisa = request.form['pesquisa']
     for filme in filmes: 
-        if busca.lower() in filme['nome_filme'].lower():
+        if pesquisa.lower() in filme['nome_filme'].lower():
             lista_filme.append(filme)
     return render_template('buscar.html', lista_filme=lista_filme)
 
@@ -40,9 +40,9 @@ def buscar():
 def deletar():
     deletar = request.form['deletar']
     for filme in filmes:
-        if filme['nome_filme'] == filmes['nome_filme']:
+        if deletar in filme['nome_filme'].lower():
             del filmes[filme]
-    return redirect('https://5000-amaranth-moose-j937nk9u.ws-us18.gitpod.io/')
+    return redirect('https://5000-gray-tahr-puynue2p.ws-us18.gitpod.io/')
 
     
 app.run(debug=True)
