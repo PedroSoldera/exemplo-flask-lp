@@ -30,7 +30,7 @@ def salvar():
 
     filmes.append(novos_filmes)
     
-    return redirect('https://5000-gold-kingfisher-gnv91d71.ws-us18.gitpod.io/')
+    return redirect('https://5000-tomato-skink-r7s7d0bq.ws-us18.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
@@ -45,9 +45,11 @@ def buscar():
 def deletar():
     deleta = request.form['deleta']
     for filme in filmes:
-        if deletar in filme['nome_filme'].lower():
-            del filmes[filme]
-    return redirect('https://5000-gold-kingfisher-gnv91d71.ws-us18.gitpod.io/')
+        if filme['nome_filme'].lower() in deletar :
+            del filme['nome_filme']
+            del filme['nota_publico']
+            del filme['nome_critico']
+    return redirect('https://5000-tomato-skink-r7s7d0bq.ws-us18.gitpod.io/')
 
     
 app.run(debug=True)

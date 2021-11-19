@@ -30,15 +30,18 @@
         <br>
         
         <form action="/buscar" method="POST">
-        <label class='label1'>Pesquise o filme:</label> <input type="text" class="form-control" name="pesquisa"/>
-        <br>
-        <a href="/buscar" class="btn btn-primary">Buscar</a>
+            <form action="/buscar" method="POST">
+                <div class="topnav"> 
+                    <input type="text" placeholder="Pesquisar" name='pesquisa'>
+                  </div>
         </form>
+
         <br>
         <form action="/deletar" method="POST">
-        <label class='label1'>Delete o filme:</label> <input type="text" class="form-control" name="deleta"/>
-        <br>
-        <a href="/deletar" class="btn btn-danger">Deletar</a>
+            <form action="/buscar" method="POST">
+                <div class="topnav"> 
+                    <input type="text" placeholder="Excluir Filme" name='deleta'>
+                  </div>
         </form>
         
     </div>
