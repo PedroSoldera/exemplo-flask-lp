@@ -4,8 +4,6 @@ app = Flask(__name__)
 
 filmes = [
     {"nome_filme": "Star Wars - A vingança dos Sith", "nota_publico": 60, "nota_critica": 80},
-    {"nome_filme": "Star Wars - A Ameaça Fantasma", "nota_publico": 59, "nota_critica": 52},
-    {"nome_filme": "Star Wars - O Ataque dos Clones", "nota_publico": 56, "nota_critica": 65},
     {"nome_filme": "Doutor Estranho", "nota_publico": 85, "nota_critica": 89},
     {"nome_filme": "Aquaman", "nota_publico": 74, "nota_critica": 65},
     {"nome_filme": "Questão de Tempo", "nota_publico": 81, "nota_critica": 69},
@@ -30,7 +28,7 @@ def salvar():
 
     filmes.append(novos_filmes)
     
-    return redirect('https://5000-emerald-cobra-vp9zohjd.ws-us18.gitpod.io/')
+    return redirect('https://5000-aqua-puma-ed71mgum.ws-us17.gitpod.io/')
 
 @app.route('/buscar', methods=['POST'])
 def buscar():
@@ -47,7 +45,7 @@ def deletar():
     for filme in filmes:
         if filme['nome_filme'].lower() == deleta.lower() :
             filmes.remove(filme)
-    return redirect('https://5000-emerald-cobra-vp9zohjd.ws-us18.gitpod.io/')
+    return redirect('https://5000-aqua-puma-ed71mgum.ws-us17.gitpod.io/')
 
     
 app.run(debug=True)
